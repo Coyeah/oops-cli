@@ -1,0 +1,29 @@
+{
+  "name": "friday-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "friday-cli": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coyeah/friday-cli.git"
+  },
+  "keywords": [],
+  "author": "Coyeah_chen@outlook.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coyeah/friday-cli/issues"
+  },
+  "homepage": "https://github.com/Coyeah/friday-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "git-clone": "^0.1.0",
+    "shelljs": "^0.8.3"
+  }
+}
