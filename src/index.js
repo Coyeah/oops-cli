@@ -1,29 +1,37 @@
+'use strict'
+
+// 定义脚手架的文件路径
+process.env.NODE_PATH = __dirname + '/../node_modules/';
+
 const program = require('commander');
-const clone = require('git-clone');
-const shell = require('shelljs');
 
-// const log = require('./utils/log.js');
-const log = console.log;
+const log = require('./utils/log');
+
+// 定义当前版本
+program
+  .version(require('../package').version );
+
+// 定义使用方法
+program
+  .usage('<command>');
+// 脚手架支持用户输入4种不同的命令,处理这4种命令的方法：
+// commander的具体使用方法在这里就不展开了，可以直接到官网https://github.com/tj/commander.js/去看详细的文档。
 
 program
-  .version('0.0.1')
-  .description('Friday Here!');
-
-program
-  .command('new <filename>')
-  .action(function(filename) {
-    if (filename) {
-      let pwd = shell.pwd();
-      log('Friday is being created.');
-      // log(`正在生成代码，位置：${pwd}\\${filename}\\`);
-      // clone(`https://github.com/Coyeah/wherever.git`, pwd + `/${filename}`, null, function() {
-      //   shell.rm('-rf', pwd + `/${filename}/.git`);
-      //   log(`${filename} is has been created successfully.`);
-      //   log('Jarvis is here at your service');
-      // });
+  .command('new')
+  .description('Generate a new project from a existing architecture.')
+  .action((project) => {
+    if (typeof project === 'string') {
+      // log.info(project);
+      require('./command/new')(project)
     } else {
-      log('please：friday-cli new <filename> / jarvis-cli new <filename> <tpl>');
+      log.error('\n × Please do not ignore the file name. -- Friday \n');
     }
-  });
+  })
 
-program.parse(process.argv);
+// 处理参数和提供帮助信息
+program.parse(process.argv)
+
+if(!program.args.length){
+    program.help()
+}
