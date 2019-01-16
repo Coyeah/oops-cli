@@ -6,5 +6,9 @@ If something doesn’t work, please [file an issue](https://github.com/Coyeah/fr
 
 ## Quick Overview
 
-> npm install friday-cli -g
-> friday-cli new <project>
+```
+npm install friday-cli -g
+friday-cli new friday-project
+cd friday-project
+npm start
+```
