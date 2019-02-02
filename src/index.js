@@ -19,11 +19,14 @@ program
 
 program
   .command('new')
+  .arguments('<project>')
+  .option('-i, --install', 'install dependency packages')
   .description('Generate a new project from a existing architecture.')
-  .action((project) => {
+  .action((project, command) => {
+    // console.log(project, command.install);
     if (typeof project === 'string') {
       // log.info(project);
-      require('./command/new')(project)
+      require('./command/new')(project, !!command.install);
     } else {
       log.error('\n × Please do not ignore the file name. -- Friday \n');
     }

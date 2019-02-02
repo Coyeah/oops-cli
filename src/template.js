@@ -1,3 +1,3 @@
 module.exports = {
-  project: 'https://github.com/Coyeah/friday-project.git',
+  single: 'https://github.com/Coyeah/friday-project.git',
 }
