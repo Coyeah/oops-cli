@@ -4,7 +4,6 @@
 process.env.NODE_PATH = __dirname + '/../node_modules/';
 
 const program = require('commander');
-
 const log = require('./utils/log');
 
 // 定义当前版本
@@ -28,7 +27,7 @@ program
       // log.info(project);
       require('./command/new')(project, !!command.install);
     } else {
-      log.error('\n × Please do not ignore the file name. -- Friday \n');
+      log.error('× Please do not ignore the file name.');
     }
   })
 

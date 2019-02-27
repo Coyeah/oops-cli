@@ -1,25 +1,25 @@
 {
-  "name": "friday-cli",
-  "version": "0.0.4",
+  "name": "oops-cli",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "bin": {
-    "friday-cli": "./bin/index.js"
+    "oops-cli": "./bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Coyeah/friday-cli.git"
+    "url": "git+https://github.com/Coyeah/oops-cli.git"
   },
   "keywords": [],
   "author": "Coyeah_chen@outlook.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Coyeah/friday-cli/issues"
+    "url": "https://github.com/Coyeah/oops-cli/issues"
   },
-  "homepage": "https://github.com/Coyeah/friday-cli#readme",
+  "homepage": "https://github.com/Coyeah/oops-cli#readme",
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^2.19.0",
