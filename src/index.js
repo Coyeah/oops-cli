@@ -19,21 +19,22 @@ program
 program
   .command('new')
   .arguments('<project>')
-  .option('-i, --install', 'install dependency packages')
+  .option('-i, --install', 'Install dependency packages')
   .description('Generate a new project from a existing architecture.')
   .action((project, command) => {
-    // console.log(project, command.install);
     if (typeof project === 'string') {
       // log.info(project);
-      require('./command/new')(project, !!command.install);
+      require('./command/new')(project, {
+        ...command
+      });
     } else {
       log.error('× Please do not ignore the file name.');
     }
-  })
+  });
 
 // 处理参数和提供帮助信息
 program.parse(process.argv)
 
 if(!program.args.length){
-    program.help()
+  program.help()
 }
