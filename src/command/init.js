@@ -5,10 +5,10 @@ const log = require('../utils/log');
 const clone = require('../utils/clone');
 const gitRepo = require('../template.js');
 
-function createProject(project, command) {
+function createProject(project, {ts = false, install = false }) {
   let pwd = shell.pwd();
-  let branch = 'single';
-  log.info(`project ( ${project} ) is being created. location: ${pwd}\\${project}`);
+  let branch = ts ? 'single-ts' : 'single';
+  log.info(`Simple app ( ${project} ) is being created. location: ${pwd}\\${project}`);
 
   const spinner = ora('Trust me, I\'m working!').start();
 
@@ -17,7 +17,7 @@ function createProject(project, command) {
   }).then(() => {
     shell.rm('-rf', `${pwd}/${project}/.git`);
     shell.cd(project);
-    if (command.install) {
+    if (install) {
       log.info('Installing dependency packages.');
       if (shell.exec('npm install --registry=https://registry.npm.taobao.org').code !== 0) {
         spinner.fail('Oops! Fail!');

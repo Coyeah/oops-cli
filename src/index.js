@@ -17,14 +17,15 @@ program
 // commander的具体使用方法在这里就不展开了，可以直接到官网https://github.com/tj/commander.js/去看详细的文档。
 
 program
-  .command('new')
+  .command('init')
   .arguments('<project>')
   .option('-i, --install', 'Install dependency packages')
-  .description('Generate a new project from a existing architecture.')
+  .option('--ts', 'Developing with TypeScript')
+  .description('Generate a simple app from a existing architecture.')
   .action((project, command) => {
     if (typeof project === 'string') {
       // log.info(project);
-      require('./command/new')(project, {
+      require('./command/init')(project, {
         ...command
       });
     } else {
