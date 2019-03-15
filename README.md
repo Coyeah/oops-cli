@@ -4,9 +4,9 @@ Initializes a project with `Webpack` and `React`.
 
 Oops! Almost forgot, with `Antd`.
 
-If you like it. Please give me a little encouragement. > [ [github project](https://github.com/Coyeah/oops-cli) ]
-
-If you something doesn’t work, please [file an issue](https://github.com/Coyeah/wherever/issues).
+```
+npm install oops-cli -g
+```
 
 ## Use it
 
@@ -27,3 +27,9 @@ oops init projectName --ts       # use TypeScript
 ### Create a project app.
 
 **Coming so~~ooooooooooooooooooooooooooooooooo~~on**
+
+## If~
+
+If you like it. Please give me a little encouragement. Star it >> [ [github project](https://github.com/Coyeah/oops-cli) ]
+
+If you something doesn’t work, please [file an issue](https://github.com/Coyeah/oops-cli/issues).
