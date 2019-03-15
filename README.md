@@ -1,16 +1,25 @@
 # oops-cli
 
-Create React project with build configuraltion. Develop it now.
+Initializes a project with `Webpack` and `React`.
 
-If something doesn’t work, please [file an issue](https://github.com/Coyeah/oops-cli/issues).
+Oops! Almost forgot, with `Antd`.
 
-## Quick Overview
+## Use it
 
-```
-npm install oops-cli -g
-
-opps new project
-
-cd project
+### Create a simple app.
 
 ```
+oops init projectName
+```
+
+You can choose whether or not to install dependent packages. Or whether to use `TypeScript`. Like that.
+
+```
+oops init projectName --install  # install dependent packages
+
+oops init projectName --ts       # use TypeScript
+```
+
+### Create a project app.
+
+**Coming so~~ooooooooooooooooooooooooooooooooo~~on**
