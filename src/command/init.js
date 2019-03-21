@@ -17,16 +17,15 @@ function createProject(project, {ts = false, install = false }) {
   }).then(() => {
     shell.rm('-rf', `${pwd}/${project}/.git`);
     shell.cd(project);
+    spinner.succeed('Oops! Succeed!')
     if (install) {
-      log.info('Installing dependency packages.');
+      log.info('Installing dependency packages. Please wait a moment...');
       if (shell.exec('npm install --registry=https://registry.npm.taobao.org').code !== 0) {
-        spinner.fail('Oops! Fail!');
         log.error('× Something is wrong in install.');
         shell.exit(1);
         return;
       }
     }
-    spinner.succeed('Oops! Succeed!')
     log.success(`√ Generation completed!`);
   }).catch(() => {
     spinner.fail('Oops! Fail!');
