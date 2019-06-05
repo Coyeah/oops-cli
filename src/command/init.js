@@ -7,7 +7,7 @@ const gitRepo = require('../template.js');
 
 function createProject(project, {ts = false, install = false }) {
   let pwd = shell.pwd();
-  let branch = ts ? 'single-ts' : 'single';
+  let branch = ts ? 'init-ts' : 'init';
   log.info(`Simple app ( ${project} ) is being created. location: ${pwd}\\${project}`);
 
   const spinner = ora('Trust me, I\'m working!').start();
