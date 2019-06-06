@@ -23,7 +23,7 @@ program
   .option('--ts', 'Developing with TypeScript')
   .description('Generate a simple app from a existing architecture.')
   .action((project, command) => {
-    if (typeof project === 'string') {
+    if (!!project && typeof project === 'string') {
       // log.info(project);
       require('./command/init')(project, {
         ...command
