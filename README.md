@@ -4,29 +4,31 @@ Initializes a project with `Webpack` and `React`.
 
 Oops! Almost forgot, with `Antd`.
 
-```
+```shell
 npm install oops-cli -g
 ```
 
 ## Use it
 
-### Create a simple app.
+### Create a simple app
 
-```
+```shell
 oops init projectName
 ```
 
 You can choose whether or not to install dependent packages. Or whether to use `TypeScript`. Like that.
 
+```shell
+oops init projectName --install   # install dependent packages
+
+oops init projectName --ts        # use TypeScript
 ```
-oops init projectName --install  # install dependent packages
 
-oops init projectName --ts       # use TypeScript
+### Create a project app
+
+```shell
+oops create projectName --mobx-ts           # create a project, by mobx and typescript
 ```
-
-### Create a project app.
-
-**Coming so~~ooooooooooooooooooooooooooooooooo~~on**
 
 ## If~
 

@@ -33,6 +33,23 @@ program
     }
   });
 
+program
+  .command('create')
+  .arguments('<project>')
+  .option('-i, --install', 'Install dependency packages')
+  .option('--mobx-ts', 'Developing with Mobx & TypeScript')
+  .description('Generate a project from a existing architecture.')
+  .action((project, command) => {
+    if (!!project && typeof project === 'string') {
+      // log.info(project);
+      require('./command/create')(project, {
+        ...command
+      });
+    } else {
+      log.error('× Please do not ignore the file name.');
+    }
+  });
+
 // 处理参数和提供帮助信息
 program.parse(process.argv)
 
