@@ -1,3 +1,3 @@
 module.exports = {
-  location: 'https://github.com/Coyeah/oops-project.git',
+  project: 'https://github.com/Coyeah/oops-project.git',
 }

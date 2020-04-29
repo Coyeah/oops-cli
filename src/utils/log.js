@@ -1,9 +1,11 @@
 const chalk = require('chalk');
 
-const log = {
-  info: text => console.log(`${chalk.whiteBright('[Oops]')} ${chalk.whiteBright(text)}`),
-  success: text => console.log(`${chalk.whiteBright('[Oops]')} ${chalk.greenBright(text)}`),
-  error: text => console.log(`${chalk.whiteBright('[Oops]')} ${chalk.redBright(text)}`),
-}
+const prefix = chalk.whiteBright('[oops-cli]');
+const logMaker = fn => text => console.log(`\n${prefix} ${fn(text)}`)
 
-module.exports = log;
+module.exports = {
+  info: logMaker(chalk.blueBright),
+  success: logMaker(chalk.greenBright),
+  warn: logMaker(chalk.yellowBright),
+  error: logMaker(chalk.redBright),
+};

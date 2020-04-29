@@ -17,37 +17,18 @@ program
 // commander的具体使用方法在这里就不展开了，可以直接到官网https://github.com/tj/commander.js/去看详细的文档。
 
 program
-  .command('init')
+  .command('project')
   .arguments('<project>')
   .option('-i, --install', 'Install dependency packages')
-  .option('--ts', 'Developing with TypeScript')
-  .description('Generate a simple app from a existing architecture.')
+  .description('Generate a project from a existing architecture. keyword: webpack & react & antd & mobx.')
   .action((project, command) => {
-    if (!!project && typeof project === 'string') {
-      // log.info(project);
-      require('./command/init')(project, {
-        ...command
-      });
-    } else {
-      log.error('× Please do not ignore the file name.');
+    if (!project || typeof project !== 'string') {
+      project = 'oops-project';
+      log.warn('I guess you have ignored the project name and it will be filled in automatically for you.')
     }
-  });
-
-program
-  .command('create')
-  .arguments('<project>')
-  .option('-i, --install', 'Install dependency packages')
-  .option('--mobx-ts', 'Developing with Mobx & TypeScript')
-  .description('Generate a project from a existing architecture.')
-  .action((project, command) => {
-    if (!!project && typeof project === 'string') {
-      // log.info(project);
-      require('./command/create')(project, {
-        ...command
-      });
-    } else {
-      log.error('× Please do not ignore the file name.');
-    }
+    require('./command/project')(project, {
+      ...command
+    });
   });
 
 // 处理参数和提供帮助信息

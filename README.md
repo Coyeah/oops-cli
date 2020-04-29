@@ -1,33 +1,17 @@
 # oops-cli
 
-Initializes a project with `Webpack` and `React`.
+快速生成一个项目脚手架。使用方式单一且简单。
 
-Oops! Almost forgot, with `Antd`.
+## 安装
 
 ```shell
-npm install oops-cli -g
+# npm install oops-cli -g
 ```
 
-## Use it
-
-### Create a simple app
+## 使用
 
 ```shell
-oops init projectName
-```
-
-You can choose whether or not to install dependent packages. Or whether to use `TypeScript`. Like that.
-
-```shell
-oops init projectName --install   # install dependent packages
-
-oops init projectName --ts        # use TypeScript
-```
-
-### Create a project app
-
-```shell
-oops create projectName --mobx-ts           # create a project, by mobx and typescript
+# oops project projectname
 ```
 
 ## If~
