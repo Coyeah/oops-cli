@@ -10,6 +10,14 @@
 
 ## 使用
 
+构建项目，react & antd & mobx & react-router;
+
+```shell
+# oops project projectname
+```
+
+构建简单应用，react & antd;
+
 ```shell
 # oops project projectname
 ```

@@ -17,16 +17,17 @@ program
 // commander的具体使用方法在这里就不展开了，可以直接到官网https://github.com/tj/commander.js/去看详细的文档。
 
 program
-  .command('project')
+  .command('create')
   .arguments('<project>')
   .option('-i, --install', 'Install dependency packages')
+  .option('-s, --simple', 'create a simple react app')
   .description('Generate a project from a existing architecture. keyword: webpack & react & antd & mobx.')
   .action((project, command) => {
     if (!project || typeof project !== 'string') {
       project = 'oops-project';
       log.warn('I guess you have ignored the project name and it will be filled in automatically for you.')
     }
-    require('./command/project')(project, {
+    require('./command/create')(project, {
       ...command
     });
   });

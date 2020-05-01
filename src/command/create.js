@@ -18,13 +18,15 @@ function fsExistsSync(path) {
 function repoCloneFn({
   projectName,
   location,
-  install
+  install,
+  simple,
 }) {
-  const spinner = ora('Project is downloading.').start();
+  const spinner = ora('downloading.').start();
+  
+  let opts = {};
+  if (simple) opts.checkout = 'simple';
 
-  clone(gitRepo.project, location, {
-    // checkout: 'master'
-  }).then(() => {
+  clone(gitRepo.project, location,opts).then(() => {
     shell.rm('-rf', `${location}/.git`);
     shell.cd(projectName);
     spinner.succeed('Oops! Succeed!');
@@ -44,7 +46,8 @@ function repoCloneFn({
 }
 
 module.exports = function createProject(projectName, {
-  install = false
+  install = false,
+  simple = false,
 }) {
   let pwd = shell.pwd();
   let location = `${pwd}/${projectName}`;
@@ -56,7 +59,8 @@ module.exports = function createProject(projectName, {
     repoCloneFn({
       projectName,
       location,
-      install
+      install,
+      simple,
     });
   }
 }
