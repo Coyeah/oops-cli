@@ -1,6 +1,6 @@
 {
   "name": "oops-cli",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Oops, a cli can get you started quickly.",
   "main": "index.js",
   "bin": {

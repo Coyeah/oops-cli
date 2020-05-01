@@ -31,15 +31,15 @@ function repoCloneFn({
     if (install) {
       log.info('Installing dependency packages. Please wait a moment...');
       if (shell.exec('npm install --registry=https://registry.npm.taobao.org').code !== 0) {
-        log.error('× Something is wrong in install.');
+        log.error('Something is wrong in install.');
         shell.exit(1);
         return;
       }
     }
-    log.success(`√ Generation completed!`);
+    log.success(`Generation completed!`);
   }).catch(() => {
     spinner.fail('Oops! Fail!');
-    log.error('× Something is wrong.');
+    log.error('Something is wrong.');
   });
 }
 
@@ -51,7 +51,7 @@ module.exports = function createProject(projectName, {
   log.info(`Folder(${projectName}) is being created. \nlocation: ${location}`);
   const isExists = fsExistsSync(location);
   if (isExists) {
-    log.error('× The folder already exists.');
+    log.error('The folder already exists.');
   } else {
     repoCloneFn({
       projectName,
